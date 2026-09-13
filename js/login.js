@@ -1,27 +1,27 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
-    getAuth,
     signInWithEmailAndPassword,
-    setPersistence,
-    browserLocalPersistence,
-    browserSessionPersistence,
-    sendPasswordResetEmail
+    sendPasswordResetEmail,
+    onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { firebaseConfig } from "./firebase-config.js";
-
-// ─── Inicializar Firebase ───────────────────────────
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { auth } from "./firebase-config.js";
 
 // ─── Referencias DOM ────────────────────────────────
 const form       = document.getElementById("loginForm");
 const emailInput = document.getElementById("email");
 const passInput  = document.getElementById("password");
-const remember   = document.getElementById("remember");
 const btnLogin   = document.getElementById("btnLogin");
 const togglePass = document.getElementById("togglePass");
 const mensaje    = document.getElementById("mensaje");
 const forgotPass = document.getElementById("forgotPass");
+
+// ─── 🔥 REDIRECCIÓN AUTOMÁTICA SI YA HAY SESIÓN ─────
+// Esto es lo que hace que al volver a entrar NO te pida login.
+// Firebase lee la sesión guardada localmente y si existe, te manda directo.
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        window.location.replace("main.html");
+    }
+});
 
 // ─── Mostrar / ocultar contraseña ───────────────────
 togglePass.addEventListener("click", () => {
@@ -46,7 +46,7 @@ const setLoading = (loading) => {
     btnLogin.disabled = loading;
 };
 
-// ─── Traducción de errores Firebase ─────────────────
+// ─── Traducción de errores ──────────────────────────
 const traducirError = (code) => {
     const errores = {
         "auth/invalid-email":          "El correo electrónico no es válido.",
@@ -69,7 +69,6 @@ form.addEventListener("submit", async (e) => {
     const email    = emailInput.value.trim();
     const password = passInput.value;
 
-    // Validación mínima del lado cliente
     if (!email || !password) {
         showMensaje("Por favor completa todos los campos.");
         return;
@@ -82,24 +81,11 @@ form.addEventListener("submit", async (e) => {
     setLoading(true);
 
     try {
-        // Persistencia según "Recordarme"
-        await setPersistence(
-            auth,
-            remember.checked ? browserLocalPersistence : browserSessionPersistence
-        );
-
-        // Autenticación
+        // La persistencia ya está garantizada globalmente
         await signInWithEmailAndPassword(auth, email, password);
-
-        // Éxito
-        showMensaje("Acceso concedido. Redirigiendo...", "exito");
-
-        setTimeout(() => {
-            window.location.href = "main.html";
-        }, 700);
-
+        // onAuthStateChanged hará la redirección automáticamente
     } catch (error) {
-        console.error("Error login:", error.code, error.message);
+        console.error("Error login:", error.code);
         showMensaje(traducirError(error.code));
         setLoading(false);
     }
@@ -120,7 +106,6 @@ forgotPass.addEventListener("click", async (e) => {
         await sendPasswordResetEmail(auth, email);
         showMensaje("Te enviamos un enlace de recuperación a tu correo.", "exito");
     } catch (error) {
-        console.error("Error reset:", error.code);
         showMensaje(traducirError(error.code));
     }
 });

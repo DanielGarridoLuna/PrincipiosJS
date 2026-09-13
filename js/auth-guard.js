@@ -1,13 +1,10 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { firebaseConfig } from "./firebase-config.js";
+import {
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { auth } from "./firebase-config.js";
 
-const app  = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// ─── Ocultar el body hasta validar sesión ───────────
-document.body.style.visibility = "hidden";
-
+// El html está oculto por el <style> en el <head> de main.html
 onAuthStateChanged(auth, (user) => {
     if (!user) {
         // No logueado → fuera
@@ -16,14 +13,14 @@ onAuthStateChanged(auth, (user) => {
     }
 
     // Logueado → mostramos el contenido
-    document.body.style.visibility = "visible";
+    document.documentElement.style.visibility = "visible";
 
-    // Pintamos el correo del usuario en el header (si existe el elemento)
+    // Pintamos el correo del usuario
     const userEmailEl = document.getElementById("userEmail");
     if (userEmailEl) userEmailEl.textContent = user.email;
 });
 
-// ─── Cerrar sesión global ───────────────────────────
+// ─── Cerrar sesión ──────────────────────────────────
 window.cerrarSesion = async () => {
     try {
         await signOut(auth);
