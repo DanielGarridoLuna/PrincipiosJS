@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Sueldo</title>
+</head>
+
+<body>
+
+    <div>
+        <label for="sueldoB">Sueldo Base:</label>
+        <input type="number" id="sueldoB" placeholder="Ingrese su sueldo">
+    </div>
+
+    <div>
+        <label for="viaticos">Viaticos:</label>
+        <input type="number" id="viaticos" placeholder="Ingrese los viaticos">
+    </div>
+
+    <div>
+        <label for="comida">Comida:</label>
+        <input type="number" id="comida" placeholder="Ingrese el gasto de comida">
+    </div>
+
+    <div>
+        <label for="transporte">Transporte:</label>
+        <input type="number" id="transporte" placeholder="Ingrese el gasto de transporte">
+    </div>
+
+    <div>
+        <label for="hospedaje">Hospedaje:</label>
+        <input type="number" id="hospedaje" placeholder="Ingrese el gasto de hospedaje">
+    </div>
+
+
+    <div>
+        <button type="button" onclick="calcularSueldo()">Calcular Sueldo</button>
+    </div>
+
+    <div id="resultado">
+        <p id="sueldoFinal"></p>
+    </div>
+
+</body>
+
+</html>
