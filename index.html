@@ -4,237 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo de Sueldo | Panel Corporativo</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Acceso | Panel Corporativo</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
 
-    <div class="app-container">
-        <header class="app-header">
-            <div class="brand">
-                <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="login-container">
+
+        <!-- Panel lateral corporativo -->
+        <aside class="login-side">
+            <div class="side-brand">
+                <svg class="side-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 9h.01M15 9h.01M9 13h.01M15 13h.01"
                         stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <div class="brand-text">
-                    <h1>Cálculo de Sueldo</h1>
-                    <span>Panel de Liquidación Corporativa</span>
-                </div>
-            </div>
-            <div class="header-badge">
-                <span class="dot"></span>
-                Sistema Activo
-            </div>
-        </header>
-
-        <main class="app-main">
-
-            <section class="card">
-                <div class="card-header">
-                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 3v18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M7 14l4-4 3 3 5-6" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h2>Ingresos</h2>
-                </div>
-
-                <div class="field">
-                    <label for="ventas">
-                        <svg class="field-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Ventas
-                    </label>
-                    <input type="number" id="ventas" placeholder="Ingrese sus ventas">
-                </div>
-            </section>
-
-            <section class="card">
-                <div class="card-header">
-                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 7h18v10H3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h2>Viáticos Asignados</h2>
-                </div>
-
-                <div class="field">
-                    <label for="viaticos">
-                        <svg class="field-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
-                            <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/>
-                        </svg>
-                        Viáticos
-                    </label>
-                    <input type="number" id="viaticos" placeholder="Ingrese los viáticos">
-                </div>
-            </section>
-
-            <section class="card">
-                <div class="card-header">
-                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    </svg>
-                    <h2>Gastos Operativos</h2>
-                </div>
-
-                <div class="field">
-                    <label for="comida">
-                        <svg class="field-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 2v9a3 3 0 0 0 6 0V2M10 11v11M17 2c-1.5 2-2 4-2 6 0 2 .5 3 2 4v10"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Comida
-                    </label>
-                    <input type="number" id="comida" placeholder="Ingrese el gasto de comida">
-                </div>
-
-                <div class="field">
-                    <label for="transporte">
-                        <svg class="field-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 17h14M5 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm18 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                            <path d="M3 17V9l3-5h12l3 5v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                            <path d="M3 9h18" stroke="currentColor" stroke-width="1.8"/>
-                        </svg>
-                        Transporte
-                    </label>
-                    <input type="number" id="transporte" placeholder="Ingrese el gasto de transporte">
-                </div>
-
-                <div class="field">
-                    <label for="hospedaje">
-                        <svg class="field-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 21V7l9-4 9 4v14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                            <path d="M3 21h18M9 21v-6h6v6" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Hospedaje
-                    </label>
-                    <input type="number" id="hospedaje" placeholder="Ingrese el gasto de hospedaje">
-                </div>
-            </section>
-
-            <div class="action">
-                <button type="button" onclick="calcularSueldo()">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/>
-                        <path d="M8 6h8M8 10h2M12 10h2M16 10h.01M8 14h2M12 14h2M16 14h.01M8 18h2M12 18h2M16 18h.01"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    </svg>
-                    Calcular Sueldo
-                </button>
+                <h2>Panel Corporativo</h2>
+                <p>Sistema interno de liquidación de sueldos y control de viáticos.</p>
             </div>
 
-            <!-- ============================= -->
-            <!-- DESGLOSE DE RESULTADOS        -->
-            <!-- ============================= -->
-            <section id="resultado" class="desglose" aria-live="polite">
+            <ul class="side-features">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Acceso seguro con cifrado
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Cálculo automático de comisiones
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Desglose detallado de gastos
+                </li>
+            </ul>
 
-                <!-- Sueldo final destacado -->
-                <div class="sueldo-final">
-                    <div class="sueldo-final-label">
-                        <svg class="sf-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <div class="side-footer">
+                <span class="dot"></span> Conexión segura
+            </div>
+        </aside>
+
+        <!-- Formulario -->
+        <main class="login-main">
+            <div class="login-box">
+                <header class="login-header">
+                    <div class="lock-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="10" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="12" cy="15.5" r="1.4" fill="currentColor"/>
                         </svg>
-                        Sueldo Final a Recibir
                     </div>
-                    <div id="sueldoFinal" class="sueldo-final-monto">$0.00</div>
-                </div>
+                    <h1>Iniciar Sesión</h1>
+                    <p>Ingresa tus credenciales corporativas</p>
+                </header>
 
-                <!-- Bloque 1: Ingresos -->
-                <div class="bloque">
-                    <div class="bloque-header">
-                        <svg class="bloque-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <h3>Ingresos</h3>
-                    </div>
-                    <div class="fila">
-                        <span class="fila-label">Sueldo Base <small>(10% de ventas)</small></span>
-                        <span id="dSueldoBase" class="fila-valor pos">$0.00</span>
-                    </div>
-                </div>
+                <form id="loginForm" novalidate>
 
-                <!-- Bloque 2: Viáticos y gastos -->
-                <div class="bloque">
-                    <div class="bloque-header">
-                        <svg class="bloque-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 5v14M19 12l-7 7-7-7" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <h3>Viáticos y Gastos</h3>
+                    <div class="field">
+                        <label for="email">
+                            <svg class="field-icon" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Correo electrónico
+                        </label>
+                        <input type="email" id="email" placeholder="usuario@empresa.com" autocomplete="email" required>
                     </div>
 
-                    <div class="fila">
-                        <span class="fila-label">Viáticos asignados</span>
-                        <span id="dViaticos" class="fila-valor pos">$0.00</span>
+                    <div class="field">
+                        <label for="password">
+                            <svg class="field-icon" viewBox="0 0 24 24" fill="none">
+                                <rect x="4" y="10" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                            </svg>
+                            Contraseña
+                        </label>
+                        <div class="input-pass">
+                            <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required>
+                            <button type="button" class="toggle-pass" id="togglePass" aria-label="Mostrar contraseña">
+                                <svg viewBox="0 0 24 24" fill="none" class="eye-open">
+                                    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" stroke="currentColor" stroke-width="1.8"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="none" class="eye-closed">
+                                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="fila sub">
-                        <span class="fila-label">· Comida</span>
-                        <span id="dComida" class="fila-valor neg">-$0.00</span>
-                    </div>
-                    <div class="fila sub">
-                        <span class="fila-label">· Transporte</span>
-                        <span id="dTransporte" class="fila-valor neg">-$0.00</span>
-                    </div>
-                    <div class="fila sub">
-                        <span class="fila-label">· Hospedaje</span>
-                        <span id="dHospedaje" class="fila-valor neg">-$0.00</span>
+                    <div class="login-extras">
+                        <label class="check">
+                            <input type="checkbox" id="remember">
+                            <span>Recordarme</span>
+                        </label>
+                        <a href="#" id="forgotPass" class="link">¿Olvidaste tu contraseña?</a>
                     </div>
 
-                    <div class="fila total">
-                        <span class="fila-label">Total gastos</span>
-                        <span id="dTotalGastos" class="fila-valor neg">-$0.00</span>
-                    </div>
+                    <button type="submit" class="btn-primary" id="btnLogin">
+                        <span class="btn-text">Ingresar</span>
+                        <span class="btn-loader">
+                            <svg viewBox="0 0 50 50" class="spinner">
+                                <circle cx="25" cy="25" r="20" fill="none" stroke-width="4"/>
+                            </svg>
+                        </span>
+                    </button>
 
-                    <div class="fila total destacada">
-                        <span class="fila-label" id="dSobranteLabel">Sobrante de viáticos</span>
-                        <span id="dSobrante" class="fila-valor">$0.00</span>
-                    </div>
-                </div>
+                    <div id="mensaje" class="mensaje" role="alert"></div>
+                </form>
 
-                <!-- Bloque 3: Explicación -->
-                <div class="bloque explicacion">
-                    <div class="bloque-header">
-                        <svg class="bloque-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
-                            <path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <h3>Ajuste sobre tu sueldo base</h3>
-                    </div>
-
-                    <div class="fila">
-                        <span class="fila-label">Sueldo base</span>
-                        <span id="eSueldoBase" class="fila-valor pos">$0.00</span>
-                    </div>
-                    <div class="fila">
-                        <span class="fila-label" id="eAjusteLabel">Ajuste por sobrante</span>
-                        <span id="eAjuste" class="fila-valor">$0.00</span>
-                    </div>
-
-                    <div class="mensaje" id="mensajeExplicacion">
-                        Ingresa tus datos y presiona <strong>Calcular Sueldo</strong> para ver el desglose.
-                    </div>
-                </div>
-
-            </section>
-
+                <footer class="login-footer">
+                    <span>© Panel de Liquidación · Uso interno</span>
+                </footer>
+            </div>
         </main>
 
-        <footer class="app-footer">
-            <span>© Panel de Liquidación · Uso interno corporativo</span>
-        </footer>
     </div>
 
-    <script src="js/operaciones.js"></script>
+    <script type="module" src="js/login.js"></script>
 </body>
 
 </html>
